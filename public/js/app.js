@@ -57543,7 +57543,8 @@ function initialize(store, router) {
 
 
     return Promise.reject(error);
-  });
+  }); //    setting up the header for all axios api calls
+  //     axios.defaults.headers.common["Authorization"] = `Bearer ${store.getters.currentUser.token}`
 }
 
 /***/ }),

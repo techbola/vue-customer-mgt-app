@@ -28,4 +28,6 @@ export function initialize(store, router) {
 
     });
 
+//    setting up the header for all axios api calls
+//     axios.defaults.headers.common["Authorization"] = `Bearer ${store.getters.currentUser.token}`
 }
