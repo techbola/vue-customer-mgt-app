@@ -13,11 +13,19 @@ export function initialize(store, router) {
         }
     });
 
+    // grabs all responses that has errors on them and
+    // checks if the status of the error is 401 (unauthorized request)
+    // maybe the token expired or the user has logged out
     axios.interceptors.response.use(null, (error) => {
+
         if (error.response.status === 401) {
             store.commit('logout');
             router.push('/login')
         }
+
+        // this returns the errors aside 401
+        return Promise.reject(error);
+
     });
 
 }
