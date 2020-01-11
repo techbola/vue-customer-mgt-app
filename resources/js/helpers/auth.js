@@ -18,6 +18,7 @@ export function login(credentials) {
 // the user can be gotten from the localStorage
 
 export function getLocalUser() {
+
     const userStr = localStorage.getItem('user');
 
     if(!userStr){
